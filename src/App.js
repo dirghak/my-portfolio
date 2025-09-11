@@ -212,13 +212,14 @@ export default function Portfolio() {
           Android & Mobile App Developer crafting fast, intuitive, and scalable mobile applications with Kotlin & Java.
         </p>
         <div className="flex justify-center gap-4">
+        <a href="#projects">
           <Button
             size="lg"
             variant="solid"
-            onClick={() => window.scrollTo({ top: document.getElementById('projects').offsetTop, behavior: 'smooth' })}
           >
             View My Work
           </Button>
+          </a>
           <a href={resumeFile} download>
             <Button size="lg" variant="outline">
               Download Resume
