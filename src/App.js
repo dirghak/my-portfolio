@@ -1,20 +1,17 @@
-import { useState } from "react";
 import { Card } from './components/ui/Card';
 import { CardContent } from './components/ui/CardContent';
 import { Button } from './components/ui/Button';
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
 import resumeFile from './assets/DirghaK_resume.pdf';
 import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Portfolio() {
 
-  const skills = [
-    'Kotlin', 'Java', 'Android SDK', 'Jetpack', 'Firebase',
-    'REST API Integration', 'MVVM & MVP', 'Google Maps API',
-    'Unit Testing', 'Retrofit', 'JSON/XML Parsing', 'CI/CD',
-    'Git & SVN', 'Material Design Guidelines', 'Animations'
-  ];
+  // const skills = [
+  //   'Kotlin', 'Java', 'Android SDK', 'Jetpack', 'Firebase',
+  //   'REST API Integration', 'MVVM & MVP', 'Google Maps API',
+  //   'Unit Testing', 'Retrofit', 'JSON/XML Parsing', 'CI/CD',
+  //   'Git & SVN', 'Material Design Guidelines', 'Animations'
+  // ];
   const contacts = [
     {
       icon: <FaEnvelope size={24} />,
@@ -190,23 +187,24 @@ export default function Portfolio() {
     <div className="font-sans bg-gray-50 text-gray-900">
       {/* Navbar */}
       <header className="sticky top-0 bg-white shadow p-4 flex justify-between">
-        <h1 className="text-xl font-bold">Dirgha K</h1>
+        <h1 className="text-xl font-bold"><a href="#intro">Dirgha K</a></h1>
         <nav className="space-x-6">
+          <a href="#intro">Intro</a>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#resume">Resume</a>
+          {/* <a href="#skills">Skills</a> */}
           {/* <a href="#blog">Blog</a> */}
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gray-100 min-h-screen flex items-center justify-center text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+      <section className="bg-gray-100 min-h-screen flex items-center justify-center" id="intro">
       <div className="text-center px-4 sm:px-6 lg:px-8 max-w-3xl">
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">Hi, I’m Dirgha 👋</h1>
-        <p className="text-xl text-gray-700 mb-6">
-          Android & Mobile App Developer crafting fast, intuitive, and scalable mobile applications with Kotlin & Java.
-        </p>
+        <h1 className="text-5xl font-bold text-gray-900 mb-4">Hi — I’m Dirgha Kathiriya 👋</h1>
+        <p className="text-xl text-gray-700 mb-2">Android & Mobile App Developer — Kotlin · Java · Jetpack · Firebase</p>
+        <p className="text-xl text-gray-700 mb-6">I build fast, reliable, and user-focused mobile apps used by thousands</p>
         <div className="flex justify-center gap-4">
         <a href="#projects">
           <Button
@@ -223,27 +221,7 @@ export default function Portfolio() {
           </a>
         </div>
       </div>
-    </section>
-      {/* <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-        <motion.h2
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-4xl font-bold"
-        >
-          Hi, I’m Dirgha 👋
-        </motion.h2>
-        <p className="mt-4 text-lg max-w-xl">
-        Sr. Android Developer | 12+ yrs | Kotlin, Jetpack Compose, Java | Mobile Solutions Expert
-        </p>
-        <div className="mt-6 space-x-4">
-        <a href="#projects">
-        <Button>View My Work</Button>
-        </a>
-         
-          <Button variant="outline">Download Resume</Button>
-        </div>
-      </section> */}
+      </section>
 
       {/* About Section */}
       <section className="py-16 bg-white" id="about">
@@ -252,18 +230,18 @@ export default function Portfolio() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <p className="text-gray-700 mb-4">
-              I’m an Android developer based in Surrey, Canada with over 10 years of experience building apps for Android and iOS. I specialize in creating high-performance, user-friendly mobile applications using Kotlin, Java, and modern frameworks.
+            I’m an Android developer based in Vancouver, Canada with 10+ years of hands-on experience designing, building, and shipping mobile apps across domains including agriculture, events, media, e-commerce and utilities. I focus on clean architecture (MVVM/MVP), responsive UIs (Material Design), robust offline-first data with Room/Firebase, and production stability (testing + CI/CD).
             </p>
             <p className="text-gray-700 mb-4">
-              I build apps with clean architecture, scalable code, and best UI/UX practices. I have experience with REST APIs, Firebase backend, Material Design, animations, location-based services, and unit testing. I thrive in Agile environments and mentoring teams.
+            I’ve led teams, mentored engineers, and owned full app lifecycles — from prototyping to Play Store release and post-release maintenance. I take performance and crash reduction seriously (improved crash rate by 50% at Plumscope) and streamlined release workflows (CI/CD → 30% faster cycles). I keep apps current with the latest Android SDKs and libraries to maximize compatibility and security.
             </p>
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Skills & Highlights</h3>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>10+ years experience in Android & iOS development</li>
+              <li>10+ years experience in Android development</li>
               <li>Kotlin, Java, Android SDK, Jetpack, Firebase</li>
-              <li>MVVM & MVP architecture, REST API integration</li>
+              <li>MVVM & MVP clean architecture, REST API integration</li>
               <li>Google Maps & location-based applications</li>
               <li>Unit Testing, Retrofit, JSON/XML parsing</li>
               <li>CI/CD pipelines, Git & SVN, Agile team experience</li>
@@ -307,24 +285,16 @@ export default function Portfolio() {
                       ))}
                     </div>
                     {proj.link && (
-                      <a
+                    <a
                       href={proj.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full"
                     >
-                      <button className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
-                        View App
-                      </button>
-                      </a>
-                      // <Button
-                      //   size="sm"
-                      //   variant="outline"
-                      //   className="mt-2"
-                      //   onClick={() => window.open(proj.link, '_blank')}
-                      // >
-                      //   View App
-                      // </Button>
+                    <button className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+                      View App
+                    </button>
+                    </a>
                     )}
                   </CardContent>
                 </Card>
@@ -380,16 +350,7 @@ export default function Portfolio() {
         </div>
       </div>
     </section>
-      {/* <section id="resume" className="max-w-5xl mx-auto py-20 px-4">
-        <h3 className="text-2xl font-bold mb-6">Resume</h3>
-        <p>
-          A detailed PDF version of my resume is available below. Highlights include leading Android projects,
-          optimizing app performance, and collaborating with cross-functional teams.
-        </p>
-        <div className="mt-6">
-          <Button>Download Resume</Button>
-        </div>
-      </section> */}
+    
 
       {/* Blog Section */}
       {/* <section id="blog" className="bg-gray-100 py-20 px-4">
@@ -399,11 +360,9 @@ export default function Portfolio() {
         </p>
       </section> */}
 
-      {/* Contact Section */}
-      <section className="py-16 bg-white" id="skills">
+   {/* Skills Section*/}
+    {/* <section className="py-16 bg-white" id="skills">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Skills */}
         <div className="text-center">
           <h3 className="text-2xl font-semibold text-gray-800 mb-6">Technical Skills</h3>
           <div className="flex flex-wrap gap-3">
@@ -417,12 +376,12 @@ export default function Portfolio() {
             ))}
           </div>
         </div>
-</div>
-</section>
-<section className="py-16 bg-white" id="contact">
-<div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Contact */}
+      </div>
+    </section> */}
+
+    {/* Contact Section*/}
+    <section className="py-16 bg-white" id="contact">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h3 className="text-2xl font-semibold text-gray-800 mb-6">Contact Me</h3>
           <div className="flex justify-center gap-6">
@@ -442,22 +401,11 @@ export default function Portfolio() {
         </div>
       </div>
     </section>
-
-
-      {/* <section id="contact" className="max-w-5xl mx-auto py-20 px-4 text-center">
-        <h3 className="text-2xl font-bold mb-6">Contact</h3>
-        <p>If you’d like to work with me or have any questions, let’s connect!</p>
-        <div className="flex justify-center space-x-6 mt-6">
-          <a href="mailto:dirghakathiriya@gmail.com"><Mail /></a>
-          <a href="https://github.com/dirghak" target="_blank" rel="noreferrer"><Github /></a>
-          <a href="https://linkedin.com/in/dirghak" target="_blank" rel="noreferrer"><Linkedin /></a>
-        </div>
-      </section> */}
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 text-center py-6">
-        © {new Date().getFullYear()} Dirgha Kathiriya. All rights reserved.
-      </footer>
+      
+    {/* Footer */}
+    <footer className="bg-gray-900 text-gray-400 text-center py-6">
+      © {new Date().getFullYear()} Dirgha Kathiriya. All rights reserved.
+    </footer>
     </div>
   );
 }
