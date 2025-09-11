@@ -39,6 +39,22 @@ export default function Portfolio() {
   ];
   const projects = [
     {
+      category: 'Fitness & Lifestyle Apps',
+      items: [
+        {
+          name: 'Canaray Mobile',
+          description: "Exercise app for body parts with timer and media player.",
+          tech: ['Android Studio', 'Jatpack Compose','Room', 'RestfulApis','Hilt', 'Dagger'],
+          link: 'https://play.google.com/store/apps/details?id=com.canaray'
+        },
+        {
+          name: 'PitFitness',
+          description: "Exercise app for body parts with timer and media player.",
+          tech: ['Eclipse', 'SQLite', 'Media Player']
+        }
+      ]
+    },
+    {
       category: 'Animal Husbandry Apps',
       items: [
         {
@@ -62,8 +78,7 @@ export default function Portfolio() {
         {
           name: 'Prompt Device App',
           description: "Fat measurement from milk via milk-fat testing machine using Bluetooth.",
-          tech: ['Android Studio', 'Bluetooth', 'Embedded System'],
-          link: 'https://www.promptsoftech.com/case-studies/milk-fat-testing-solution.html'
+          tech: ['Android Studio', 'Bluetooth', 'Embedded System']
         },
       ]
     },
@@ -79,8 +94,23 @@ export default function Portfolio() {
         {
           name: 'Matrubharti for Authors',
           description: "Allows authors to manage profiles and connect with fans.",
-          tech: ['Android Studio'],
-          link: 'https://play.google.com/store/apps/details?id=com.nichetech.matrubhartiauthor'
+          tech: ['Android Studio']
+        }
+      ]
+    },
+    {
+      category: 'Government & Utility Apps',
+      items: [
+        {
+          name: 'RMC (Rajkot Municipal Corporation)',
+          description: "Provides public/government services via mobile.",
+          tech: ['Eclipse', 'Android SDK'],
+          link: 'https://play.google.com/store/apps/details?id=com.app.rmcgov'
+        },
+        {
+          name: 'Drive Safe',
+          description: "Disables teen phones while driving to prevent distractions.",
+          tech: ['Android Studio', 'GPS']
         }
       ]
     },
@@ -90,14 +120,12 @@ export default function Portfolio() {
         {
           name: 'Check-in Now Plus',
           description: "Fast guest check-in app, works online/offline.",
-          tech: ['Android Studio', 'GPS'],
-          link: 'https://play.google.com/store/apps/details?id=com.in4medinc.checkinplus'
+          tech: ['Android Studio', 'GPS']
         },
         {
           name: 'Event4me 2018',
           description: "Official event app for McKesson Events with agenda, maps, and exhibitor info.",
-          tech: ['Android Studio', 'Google Maps'],
-          link: 'https://play.google.com/store/apps/details?id=com.mckesson.ideashare'
+          tech: ['Android Studio', 'Google Maps']
         },
       ]
     },
@@ -107,8 +135,7 @@ export default function Portfolio() {
         {
           name: 'SnapZonez',
           description: "Photo booth app with animated selfies and location-based sharing.",
-          tech: ['Android Studio', 'GPS', 'FFmpeg'],
-          link: 'https://play.google.com/store/apps/details?id=com.snapzonez'
+          tech: ['Android Studio', 'GPS', 'FFmpeg']
         },
         {
           name: 'SnapBooth',
@@ -128,34 +155,6 @@ export default function Portfolio() {
       ]
     },
     {
-      category: 'Government & Utility Apps',
-      items: [
-        {
-          name: 'RMC (Rajkot Municipal Corporation)',
-          description: "Provides public/government services via mobile.",
-          tech: ['Eclipse', 'Android SDK'],
-          link: 'https://play.google.com/store/apps/details?id=com.app.rmcgov'
-        },
-        {
-          name: 'Drive Safe',
-          description: "Disables teen phones while driving to prevent distractions.",
-          tech: ['Android Studio', 'GPS'],
-          link: 'https://play.google.com/store/apps/details?id=com.app.nt.drivesaf'
-        }
-      ]
-    },
-    {
-      category: 'Fitness & Lifestyle Apps',
-      items: [
-        {
-          name: 'PitFitness',
-          description: "Exercise app for body parts with timer and media player.",
-          tech: ['Eclipse', 'SQLite', 'Media Player'],
-          link: 'https://market.android.com/details?id=com.pitfitness'
-        }
-      ]
-    },
-    {
       category: 'Marketplace Apps',
       items: [
         {
@@ -166,8 +165,7 @@ export default function Portfolio() {
         {
           name: 'Yeeb',
           description: "Marketplace app to post products for sale and buy from others.",
-          tech: ['Eclipse', 'SQLite', 'JSON', 'Push Notification'],
-          link: 'https://market.android.com/details?id=com.yeeb'
+          tech: ['Eclipse', 'SQLite', 'JSON', 'Push Notification']
         }
       ]
     },
@@ -177,14 +175,12 @@ export default function Portfolio() {
         {
           name: 'NowArchive',
           description: "Discovery platform for videos/photos, integrated with marketplace.",
-          tech: ['Android Studio', 'Parse.com', 'Fabric.io', 'PayPal'],
-          link: 'https://play.google.com/store/apps/details?id=com.sui.nowarchive'
+          tech: ['Android Studio', 'Parse.com', 'Fabric.io', 'PayPal']
         },
         {
           name: 'iPoint Global TV',
           description: "View live TV channels and videos with subscription.",
-          tech: ['Eclipse', 'SQLite', 'JSON', 'Live Streaming'],
-          link: 'https://market.android.com/details?id=com.ipointApp'
+          tech: ['Eclipse', 'SQLite', 'JSON', 'Live Streaming']
         }
       ]
     }
@@ -205,7 +201,7 @@ export default function Portfolio() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gray-100 min-h-screen flex items-center justify-center">
+      <section className="bg-gray-100 min-h-screen flex items-center justify-center text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
       <div className="text-center px-4 sm:px-6 lg:px-8 max-w-3xl">
         <h1 className="text-5xl font-bold text-gray-900 mb-4">Hi, I’m Dirgha 👋</h1>
         <p className="text-xl text-gray-700 mb-6">
@@ -312,7 +308,7 @@ export default function Portfolio() {
                     </div>
                     {proj.link && (
                       <a
-                      href={project.link}
+                      href={proj.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full"
