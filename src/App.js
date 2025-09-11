@@ -18,7 +18,7 @@ export default function Portfolio() {
   const contacts = [
     {
       icon: <FaEnvelope size={24} />,
-      link: 'mailto:dirghakathiriya@example.com',
+      link: 'mailto:dirghakathiriya@gmail.com',
       title: 'Email'
     },
     {
@@ -311,14 +311,24 @@ export default function Portfolio() {
                       ))}
                     </div>
                     {proj.link && (
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="mt-2"
-                        onClick={() => window.open(proj.link, '_blank')}
-                      >
+                      <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full"
+                    >
+                      <button className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
                         View App
-                      </Button>
+                      </button>
+                      </a>
+                      // <Button
+                      //   size="sm"
+                      //   variant="outline"
+                      //   className="mt-2"
+                      //   onClick={() => window.open(proj.link, '_blank')}
+                      // >
+                      //   View App
+                      // </Button>
                     )}
                   </CardContent>
                 </Card>
