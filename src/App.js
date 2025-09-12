@@ -274,7 +274,7 @@ export default function Portfolio() {
               social interaction tied to physical locations.
             </p>
             <p className="text-sm text-gray-600 mb-4"><strong>Tech:</strong> Android Studio · GPS · FFmpeg · Video Processing</p>
-            <a href="mailto:dirghakathiriya@gmail.com?subject=Demo%20Request%20-%20SnapZonez">
+            <a href="mailto:dirghakathiriya@gmail.com?subject=Demo%20Request%20-%20SnapZonez%20App">
               <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
                 Request Private Demo
               </button>
@@ -292,7 +292,7 @@ export default function Portfolio() {
               engagement at large-scale conferences.
             </p>
             <p className="text-sm text-gray-600 mb-4"><strong>Tech:</strong> Android Studio · Google Maps · Offline Sync</p>
-            <a href="mailto:dirghakathiriya@gmail.com?subject=Demo%20Request%20%20Event4Me">
+            <a href="mailto:dirghakathiriya@gmail.com?subject=Demo%20Request%20%20Event4Me%20App">
               <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
                 Request Private Demo
               </button>
