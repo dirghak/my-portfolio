@@ -54,7 +54,7 @@ export default function Portfolio() {
             </button>
           </a>
           <a href={resumeFile} download>
-            <button className="px-6 py-3 rounded-md font-semibold text-base bg-green-600 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+            <button className="px-6 py-3 rounded-md font-semibold text-base bg-green-700 text-white hover:bg-green-800">
               Download Resume
             </button>
           </a>
@@ -137,7 +137,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+              <button className="px-6 py-3 rounded-md font-semibold text-base bg-green-600 text-white hover:bg-green-700 shadow-lg">
                 View App
               </button>
             </a>
@@ -158,7 +158,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+              <button className="px-6 py-3 rounded-md font-semibold text-base bg-green-600 text-white hover:bg-green-700 shadow-lg">
                 View App
               </button>
             </a>
