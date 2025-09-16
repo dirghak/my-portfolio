@@ -176,7 +176,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="w-full px-6 py-3 rounded-md font-semibold text-base bg-green-600 text-white hover:bg-green-700 shadow-lg">
+              <button className="w-full px-6 py-3 rounded-md font-semibold text-base bg-green-700 text-white hover:bg-green-800">
                 View App
               </button>
             </a>
@@ -199,7 +199,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="w-full px-6 py-3 rounded-md font-semibold text-base bg-green-600 text-white hover:bg-green-700 shadow-lg">
+              <button className="w-full px-6 py-3 rounded-md font-semibold text-base bg-green-700 text-white hover:bg-green-800">
                 View App
               </button>
             </a>
@@ -221,7 +221,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="w-full px-6 py-3 rounded-md font-semibold text-base bg-green-600 text-white hover:bg-green-700 shadow-lg">
+              <button className="w-full px-6 py-3 rounded-md font-semibold text-base bg-green-700 text-white hover:bg-green-800">
                 View App
               </button>
             </a>
@@ -239,7 +239,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="w-full px-6 py-3 rounded-md font-semibold text-base bg-green-600 text-white hover:bg-green-700 shadow-lg">
+              <button className="w-full px-6 py-3 rounded-md font-semibold text-base bg-green-700 text-white hover:bg-green-800">
                 View App
               </button>
             </a>
