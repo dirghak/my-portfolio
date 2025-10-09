@@ -449,7 +449,7 @@ export default function Portfolio() {
           {/* Plumscope */}
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
             <h3 className="text-xl font-semibold">Android Technical Lead — Plumscope Inc.</h3>
-            <p className="text-gray-600 text-sm mb-2">Oct 2022 – Feb 2024 · Vancouver, BC</p>
+            <p className="text-gray-600 text-sm mb-2">Oct 2022 – Present · Vancouver, BC</p>
             <ul className="list-disc list-inside text-gray-700 space-y-1">
               <li>Led Android development lifecycle from concept to deployment.</li>
               <li>Reduced app crash rate by <strong>50%</strong> through rigorous testing and debugging.</li>
