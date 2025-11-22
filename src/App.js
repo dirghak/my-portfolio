@@ -27,7 +27,7 @@ export default function Portfolio() {
       <header className="sticky top-0 bg-white shadow p-4 flex justify-between">
         <h1 className="text-xl font-bold"><a href="#intro">Dirgha K</a></h1>
         <nav className="space-x-6">
-          <a href="#intro">Intro</a>
+          {/* <a href="#intro">Intro</a> */}
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
@@ -37,7 +37,15 @@ export default function Portfolio() {
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-white to-gray-50 px-4">
+      <section id="intro" className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-white to-gray-50 px-4">
+        {/* Profile Image */}
+        <div className="flex-shrink-0">
+          <img 
+            src={ProfileImg} 
+            alt="Dirgha Kathiriya" 
+            className="w-40 h-40 rounded-full shadow-lg object-cover"
+          />
+        </div>
         <h1 className="text-4xl sm:text-6xl font-bold mb-4">Hi, I’m Dirgha Kathiriya 👋</h1>
         <p className="text-xl sm:text-2xl text-gray-700 mb-6">
         Android & Mobile App Developer | 10+ Years Experience {/* | Vancouver, BC */}
@@ -47,6 +55,20 @@ export default function Portfolio() {
           from agriculture and healthcare to events, media, and e-commerce. My focus is on 
           performance, stability, and creating meaningful digital experiences.
         </p>
+        <div className="flex gap-4 mb-8">
+            {contacts.map((c, i) => (
+              <a
+                key={i}
+                href={c.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={c.title}
+                className={`text-gray-700 hover:text-blue-600 transition-colors`}
+              >
+                {c.icon}
+              </a>
+            ))}
+        </div>  
         <div className="flex gap-4">
           <a href="#projects" aria-label="View my work">
             <button className="px-6 py-3 rounded-md font-semibold text-base bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
@@ -61,32 +83,24 @@ export default function Portfolio() {
         </div>
       </section>
 
+
       {/* About Section */}
       <section id="about" className="py-20 bg-white px-6 md:px-20">
         <h2 className="text-3xl font-bold mb-10 text-center">About Me</h2>
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
-    
-          {/* Profile Image */}
-          <div className="flex-shrink-0">
-            <img 
-              src={ProfileImg} 
-              alt="Dirgha Kathiriya" 
-              className="w-40 h-40 rounded-full shadow-lg object-cover"
-            />
-          </div>
           {/* Text */}
           <div className="text-lg text-gray-700 space-y-6">
             <p>
-              I’m an Android developer based in <strong>Vancouver, BC</strong>, with 
-              10+ years of experience building production-grade apps in Kotlin and Java. 
-              I’ve delivered more than 30 apps across industries including agriculture, 
-              events, media, e-commerce, and publishing.
+            As a Senior Android Developer at Plumscope Inc., I lead the development of enterprise-level Android applications, driving a 30% increase in deployment speed through the implementation of efficient CI/CD pipelines. My role involves enhancing application stability and user satisfaction by collaborating closely with UI/UX designers to integrate accessibility features, resulting in a 15% improvement in user satisfaction scores.
             </p>
             <p>
-              Beyond coding, I bring <strong>problem solving</strong>, 
-              <strong>communication</strong>, and <strong>cross-team collaboration</strong> 
-              to every role. My leadership at Plumscope reduced crash rates by 50% and 
-              sped up releases by 30% with CI/CD pipelines.
+            Previously, I served as a Senior Android Developer and Team Lead at Prompt Softech, where I directed a team to deliver high-performance applications, achieving an 80% boost in app performance. My educational background in Computer Engineering from Veer Narmad South Gujarat University provided a strong foundation in software development, mobile application development, and cloud computing.
+            </p>
+            <p>
+            I possess a robust set of technical skills, including Java, Kotlin, and Android SDK/NDK, complemented by software knowledge in tools like Retrofit, Firebase, and Jenkins. My certifications, such as the Meta Android Developer Certification, underscore my commitment to continuous learning and mastery of Android development.
+            </p>
+            <p>
+            What sets me apart is my ability to lead and mentor teams, fostering a collaborative environment that enhances productivity and innovation. I am passionate about building user-centric applications and am eager to bring my expertise in modern architectures and agile practices to a forward-thinking organization. Let's connect to explore how I can contribute to your team's success.
             </p>
           </div>
         </div>
@@ -117,7 +131,7 @@ export default function Portfolio() {
 
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-white px-6 md:px-20">
-        <h2 className="text-3xl font-bold mb-10 text-center">Highlighted Projects</h2>
+        <h2 className="text-3xl font-bold mb-10 text-center">Projects</h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
           {/* Farm365 */}
@@ -449,12 +463,12 @@ export default function Portfolio() {
           {/* Plumscope */}
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
             <h3 className="text-xl font-semibold">Android Technical Lead — Plumscope Inc.</h3>
-            <p className="text-gray-600 text-sm mb-2">Oct 2022 – Feb 2024 · Vancouver, BC</p>
+            <p className="text-gray-600 text-sm mb-2">Oct 2022 – Present · Vancouver, BC</p>
             <ul className="list-disc list-inside text-gray-700 space-y-1">
-              <li>Led Android development lifecycle from concept to deployment.</li>
-              <li>Reduced app crash rate by <strong>50%</strong> through rigorous testing and debugging.</li>
-              <li>Implemented CI/CD pipelines, cutting release cycles by <strong>30%</strong>.</li>
-              <li>Provided mentorship and code reviews for junior developers.</li>
+              <li>Spearheaded the development of enterprise Android applications, achieving a <strong>30%</strong> increase in deployment speed by implementing efficient CI/CD pipelines.</li>
+              <li>Enhanced application stability, reducing crash rates by <strong>50%</strong> through comprehensive debugging and testing strategies.</li>
+              <li>Elevated team productivity by <strong>20%</strong> by mentoring junior developers and fostering a collaborative coding environment.</li>
+              <li>Collaborated with UI/UX designers to integrate accessibility features, improving user satisfaction scores by <strong>15%</strong>.</li>
             </ul>
           </div>
 
@@ -494,7 +508,7 @@ export default function Portfolio() {
     <section className="py-16 bg-white" id="contact">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-6">Contact Me</h3>
+          <h3 className="text-2xl font-semibold text-gray-800 mb-6">Let’s Work Together</h3>
           <div className="flex justify-center gap-6">
             {contacts.map((c, i) => (
               <a
