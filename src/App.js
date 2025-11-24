@@ -1,24 +1,68 @@
 import resumeFile from './assets/DirghaK_resume.pdf';
 import ProfileImg from './assets/profile.jpeg';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone} from 'react-icons/fa';
 
 export default function Portfolio() {
   const contacts = [
     {
       icon: <FaEnvelope size={24} />,
       link: 'mailto:dirghakathiriya@gmail.com',
-      title: 'Email'
+      title: 'Email',
+      color: 'red-600'
+    },
+    {
+      icon: <FaPhone size={24} />,
+      link: 'https://calendly.com/dirghakathiriya/30min',
+      title: 'Book a Call',
+      color: 'green-600'
     },
     {
       icon: <FaLinkedin size={24} />,
       link: 'https://www.linkedin.com/in/dirghak/',
-      title: 'LinkedIn'
+      title: 'LinkedIn',
+      color: 'blue-600'
     },
     {
       icon: <FaGithub size={24} />,
       link: 'https://github.com/dirghak',
-      title: 'GitHub'
+      title: 'GitHub',
+      color: 'gray-800'
     }
+  ];
+
+  const skillCategories = [
+    {
+      category: "Technical Skills",
+      skills: [
+        "Java", "Kotlin", "Android SDK/NDK", "iOS (Swift)", "Jetpack Compose",
+        "MVVM", "MVP", "Retrofit", "SQLite", "Clean Architecture", "Room Database", "Firebase", "Jetpack", 
+        "Git", "SVN", "Jenkins","XML","Junit", "Volley", "Jira", "Espresso"
+      ],
+    },
+    {
+      category: "Mobile Development",
+      skills: [
+        "REST API Integration", "Offline-First Apps", "NFC & Bluetooth Technologies",
+        "Performance Optimization", "Google Maps & GPS", "Bluetooth & IoT Integration",
+        "Cloud Platforms (AWS, Google Cloud)","Crash Reduction", "FFmpeg (Video/GIF)","Play Store Deployment"
+      ],
+    },
+    {
+      category: "Soft Skills",
+      skills: [
+        "Problem Solving", "Communication",
+        "Team Leadership", "Time Management", "Attention to Detail", "Adaptability",
+        "Cross-functional Collaboration", "Critical Thinking", "Mentoring & Team Support","Agile / Scrum Experience"
+      ],
+    },
+    {
+      category: "Leadership & Other",
+      skills: [
+        "Team Guidance & Code Review", 
+        "Requirement Analysis", "Work Estimation",
+        "Technical Documentation", "Material Design Standards", "Willingness to learn", "Creativity", "Continuous Improvement", "Ownership"
+      ],
+    },
   ];
 
   return (
@@ -27,10 +71,10 @@ export default function Portfolio() {
       <header className="sticky top-0 bg-white shadow p-4 flex justify-between">
         <h1 className="text-xl font-bold"><a href="#intro">Dirgha K</a></h1>
         <nav className="space-x-6">
-          {/* <a href="#intro">Intro</a> */}
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
           {/* <a href="#blog">Blog</a> */}
           <a href="#contact">Contact</a>
         </nav>
@@ -46,7 +90,7 @@ export default function Portfolio() {
             className="w-40 h-40 rounded-full shadow-lg object-cover"
           />
         </div>
-        <h1 className="text-4xl sm:text-6xl font-bold mb-4">Hi, I’m Dirgha Kathiriya 👋</h1>
+        <h1 className="text-4xl sm:text-6xl font-bold mb-4">Hi, I’m Dirgha Kathiriya</h1>
         <p className="text-xl sm:text-2xl text-gray-700 mb-6">
         Android & Mobile App Developer | 10+ Years Experience {/* | Vancouver, BC */}
         </p>
@@ -55,20 +99,6 @@ export default function Portfolio() {
           from agriculture and healthcare to events, media, and e-commerce. My focus is on 
           performance, stability, and creating meaningful digital experiences.
         </p>
-        <div className="flex gap-4 mb-8">
-            {contacts.map((c, i) => (
-              <a
-                key={i}
-                href={c.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={c.title}
-                className={`text-gray-700 hover:text-blue-600 transition-colors`}
-              >
-                {c.icon}
-              </a>
-            ))}
-        </div>  
         <div className="flex gap-4">
           <a href="#projects" aria-label="View my work">
             <button className="px-6 py-3 rounded-md font-semibold text-base bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
@@ -78,6 +108,11 @@ export default function Portfolio() {
           <a href={resumeFile} download>
             <button className="px-6 py-3 rounded-md font-semibold text-base bg-green-700 text-white hover:bg-green-800">
               Download Resume
+            </button>
+          </a>
+          <a href="#contact" aria-label="Connect with Me">
+            <button className="px-6 py-3 rounded-md font-semibold text-base bg-purple-600 text-white hover:bg-purple-700 shadow-lg hover:scale-105 transition duration-300">
+            Connect with Me
             </button>
           </a>
         </div>
@@ -106,26 +141,51 @@ export default function Portfolio() {
         </div>
       </section>
  
-      {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50 px-6 md:px-20">
-        <h2 className="text-3xl font-bold mb-10 text-center">Skills</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-center">
-          {
-            [
-              "Kotlin", "Java", "Android SDK", "Jetpack Compose", 
-              "Modern App Architecture","Dependency Injection","Kotlin Coroutines and Flow","Performance Optimization",
-              "Jetpack (Room, ViewModel, LiveData)", "Firebase (Auth, Firestore, Messaging)", "Google Maps & Directions API", "Bluetooth & Embedded Integration",
-              "REST APIs / Retrofit", "Unit & UI Testing", "CI/CD Pipelines", "Git & SVN",
-              "Problem Solving", "Communication", "Collaboration", "Attention to Detail",
-              "Agile/Scrum","Secure Coding Practices","Advanced App Architecture","Code Review and Quality Assurance"
-            ].map((skill, index) => (
-            <div 
-              key={index} 
-              className="px-4 py-3 bg-white shadow rounded-lg text-gray-800 font-medium hover:shadow-md transition"
-            >
-              {skill}
-            </div>))
-          }
+      <section id="experience" className="py-20 bg-gray-50 px-6 md:px-20">
+        <h2 className="text-3xl font-bold mb-10 text-center">Experience</h2>
+        <div className="text-center mb-8">
+          <a href={resumeFile} download>
+            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+              Download My Resume
+            </button>
+          </a>
+        </div>
+
+        <div className="max-w-4xl mx-auto space-y-8">
+
+          {/* Plumscope */}
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+            <h3 className="text-xl font-semibold">Android Technical Lead — Plumscope Inc.</h3>
+            <p className="text-gray-600 text-sm mb-2">Oct 2022 – Present · Vancouver, BC</p>
+            <ul className="list-disc list-inside text-gray-700 space-y-1">
+              <li>Spearheaded the development of enterprise Android applications, achieving a <strong>30%</strong> increase in deployment speed by implementing efficient CI/CD pipelines.</li>
+              <li>Enhanced application stability, reducing crash rates by <strong>50%</strong> through comprehensive debugging and testing strategies.</li>
+              <li>Elevated team productivity by <strong>20%</strong> by mentoring junior developers and fostering a collaborative coding environment.</li>
+              <li>Collaborated with UI/UX designers to integrate accessibility features, improving user satisfaction scores by <strong>15%</strong>.</li>
+            </ul>
+          </div>
+
+          {/* Prompt Softech */}
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+            <h3 className="text-xl font-semibold">Android Team Lead — Prompt Softech</h3>
+            <p className="text-gray-600 text-sm mb-2">2019 – 2022 · Ahmedabad, India</p>
+            <ul className="list-disc list-inside text-gray-700 space-y-1">
+              <li>Planned and delivered multiple Android projects with Agile methodology.</li>
+              <li>Trained and managed a team of developers, improving delivery quality.</li>
+              <li>Handled Git/SVN branching strategies across modules.</li>
+            </ul>
+          </div>
+
+          {/* Earlier Roles */}
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+            <h3 className="text-xl font-semibold">Senior Android Developer — Various Companies</h3>
+            <p className="text-gray-600 text-sm mb-2">2012 – 2019 · India</p>
+            <ul className="list-disc list-inside text-gray-700 space-y-1">
+              <li>Delivered 20+ production apps across e-commerce, social, and utilities.</li>
+              <li>Integrated Google Maps, payment gateways, and social APIs.</li>
+              <li>Developed scalable apps with clean architecture (MVP/MVVM).</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -446,57 +506,31 @@ export default function Portfolio() {
 
         </div>
       </section>
-
-
-      <section id="experience" className="py-20 bg-gray-50 px-6 md:px-20">
-        <h2 className="text-3xl font-bold mb-10 text-center">Experience</h2>
-        <div className="text-center mb-8">
-          <a href={resumeFile} download>
-            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-              Download My Resume
-            </button>
-          </a>
-        </div>
-
-        <div className="max-w-4xl mx-auto space-y-8">
-
-          {/* Plumscope */}
-          <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
-            <h3 className="text-xl font-semibold">Android Technical Lead — Plumscope Inc.</h3>
-            <p className="text-gray-600 text-sm mb-2">Oct 2022 – Present · Vancouver, BC</p>
-            <ul className="list-disc list-inside text-gray-700 space-y-1">
-              <li>Spearheaded the development of enterprise Android applications, achieving a <strong>30%</strong> increase in deployment speed by implementing efficient CI/CD pipelines.</li>
-              <li>Enhanced application stability, reducing crash rates by <strong>50%</strong> through comprehensive debugging and testing strategies.</li>
-              <li>Elevated team productivity by <strong>20%</strong> by mentoring junior developers and fostering a collaborative coding environment.</li>
-              <li>Collaborated with UI/UX designers to integrate accessibility features, improving user satisfaction scores by <strong>15%</strong>.</li>
-            </ul>
-          </div>
-
-          {/* Prompt Softech */}
-          <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
-            <h3 className="text-xl font-semibold">Android Team Lead — Prompt Softech</h3>
-            <p className="text-gray-600 text-sm mb-2">2019 – 2022 · Ahmedabad, India</p>
-            <ul className="list-disc list-inside text-gray-700 space-y-1">
-              <li>Planned and delivered multiple Android projects with Agile methodology.</li>
-              <li>Trained and managed a team of developers, improving delivery quality.</li>
-              <li>Handled Git/SVN branching strategies across modules.</li>
-            </ul>
-          </div>
-
-          {/* Earlier Roles */}
-          <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
-            <h3 className="text-xl font-semibold">Senior Android Developer — Various Companies</h3>
-            <p className="text-gray-600 text-sm mb-2">2012 – 2019 · India</p>
-            <ul className="list-disc list-inside text-gray-700 space-y-1">
-              <li>Delivered 20+ production apps across e-commerce, social, and utilities.</li>
-              <li>Integrated Google Maps, payment gateways, and social APIs.</li>
-              <li>Developed scalable apps with clean architecture (MVP/MVVM).</li>
-            </ul>
-          </div>
-        </div>
-      </section>
   
-      {/* Blog Section */}
+    {/* Skills Section */}
+    <section id="skills" className="py-16 bg-gray-100 px-6 md:px-20">
+      <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
+      
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {skillCategories.map((cat, index) => (
+          <div key={index} className="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+            <h3 className="text-xl font-semibold mb-4">{cat.category}</h3>
+            <ul className="flex flex-wrap gap-2">
+              {cat.skills.map((skill, idx) => (
+                <li
+                  key={idx}
+                  className="px-4 py-3 bg-blue-100 text-blue-800 font-medium rounded-full text-sm"
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Blog Section */}
       {/* <section id="blog" className="bg-gray-100 py-20 px-4">
         <h3 className="text-2xl font-bold mb-6 text-center">Blog</h3>
         <p className="text-center text-gray-700 max-w-2xl mx-auto">
@@ -509,6 +543,9 @@ export default function Portfolio() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h3 className="text-2xl font-semibold text-gray-800 mb-6">Let’s Work Together</h3>
+          <p className="text-gray-600 max-w-xl mx-auto mb-10">
+            I’d love to connect! Whether it’s about an opportunity, collaboration, or just a tech chat — feel free to reach out.
+          </p>
           <div className="flex justify-center gap-6">
             {contacts.map((c, i) => (
               <a
@@ -517,7 +554,7 @@ export default function Portfolio() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={c.title}
-                className={`text-gray-700 hover:text-blue-600 transition-colors`}
+                className={`p-4 rounded-full bg-gray-100 shadow transition duration-300 hover:bg-${c.color} hover:text-white`}
               >
                 {c.icon}
               </a>
